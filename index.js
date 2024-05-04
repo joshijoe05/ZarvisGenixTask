@@ -1,13 +1,13 @@
 require("dotenv").config({ path: "./.env" })
 const express = require("express");
-const connectDB = require("./db/index");
+const connectDB = require("./src/db/index");
 
 const app = express();
 app.use(express.json({ limit: "16kb" }));
 
 
 // routes
-const authRoute = require("./routes/auth.route");
+const authRoute = require("./src/routes/auth.route");
 app.use("/api/auth", authRoute);
 
 
